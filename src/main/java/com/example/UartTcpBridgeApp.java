@@ -21,7 +21,7 @@ public class UartTcpBridgeApp {
 
         try (ServerSocket serverSocket = new ServerSocket(tcpPort)) {
             while (true) {
-                System.out.println("Waiting for connection on port " + tcpPort);
+                System.out.printf("Listening on %s port to connect with [%s,%s]", tcpPort, uartPort, uartBaud);
                 Socket clientSocket = serverSocket.accept();
                 SerialPort comm10 = SerialPort.getCommPort(uartPort);
                 try {
