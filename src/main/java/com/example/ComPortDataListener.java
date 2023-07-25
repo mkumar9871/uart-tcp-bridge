@@ -24,6 +24,7 @@ public class ComPortDataListener implements SerialPortDataListener {
         try {
             byte[] bytes = serialPortEvent.getReceivedData();
             outputStream.write(bytes);
+            System.out.println("R: " + new String(bytes));
         } catch (IOException e) {
             e.printStackTrace();
         }

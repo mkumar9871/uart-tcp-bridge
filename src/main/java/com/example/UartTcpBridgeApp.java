@@ -68,6 +68,7 @@ public class UartTcpBridgeApp {
                 while ((bytesRead = inputStream.read(buffer))!=-1) {
                     outputStream.write(buffer, 0, bytesRead);
                     outputStream.flush();
+                    System.out.println(new String(buffer, 0, bytesRead));
                 }
             } finally {
                 inputStream.close();
